@@ -34,6 +34,9 @@ public class Main {
 				//Perform the traversal of the graph
 				System.out.println("DFS Traversal of a tree is ------------->");
 				g.dfs();
+				System.out.println();
+				System.out.println("BFS");
+				g.bfs();
 		
 
 	}

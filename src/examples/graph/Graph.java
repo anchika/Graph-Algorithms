@@ -1,6 +1,8 @@
 package examples.graph;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Graph {
@@ -76,6 +78,24 @@ public class Graph {
 	private void printNode(Node rootNode2) {
 		// TODO Auto-generated method stub
 		System.out.print(rootNode2.label+" ");
+	}
+	
+	public void bfs() {
+		Queue q = new LinkedList();
+		q.add(this.rootNode);
+		printNode(rootNode);
+		rootNode.visited = true;
+		while( !q.isEmpty()){
+			Node n = (Node)q.remove();
+			Node child = null;
+			while((child = getUnvisitedNode(n))!= null){
+				child.visited = true;
+				printNode(child);
+				q.add(child);
+			}
+		}
+		clearNodes();
+		
 	}
 	 
 	
